@@ -17,6 +17,7 @@ Windows OS (Agent Machine)
 Chocolatey (Package Manager)
 
 🚀 Tasks Implemented
+
 🔹 Level 1: Digital Fingerprint
 
 Created directory: C:/PuppetMission
@@ -28,6 +29,7 @@ Content:
 Puppet was here at Shruti
 
 ✅ Self-healing: File is recreated if deleted
+
 
 🔹 Level 2: Service Lock
 
@@ -41,6 +43,7 @@ Service is disabled
 
 ✅ Automatically stops if manually started
 
+
 🔹 Level 3: Secret Agent Registry
 
 Created Registry Key:
@@ -48,13 +51,16 @@ Created Registry Key:
 HKLM\Software\PuppetMaster
 
 Added Value:
-
 MissionStatus = Success
+
+
 🔹 Level 4: Silent Installer
 
 Installed Notepad++ using Chocolatey
 
 ✅ Automatically reinstalls if removed
+
+
 
 🔹 Level 5: Identity Report (Facts)
 
@@ -62,22 +68,19 @@ Created file: spec_report.txt
 
 Includes system details:
 
-OS Name
+    ---> OS Name
 
-OS Version
+    ---> OS Version
 
-RAM Size
+    ---> RAM Size
 
-Example:
+Example: This machine is running Windows 10 and has 8 GB of RAM.
 
-This machine is running Windows 10 and has 8 GB of RAM.
 🏆 Boss Level: Self-Healing Website
 
 Installed IIS (Web Server)
 
-Created website file:
-
-C:/inetpub/wwwroot/index.html
+Created website file:  C:/inetpub/wwwroot/index.html
 
 Ensured:
 
@@ -87,18 +90,24 @@ IIS service (W3SVC) is always running
 
 ✅ Automatically restores content if modified
 
+
 ▶️ How to Run
+
 Step 1: Start Puppet Server (Docker)
 docker run -d --name puppet-server -p 8140:8140 puppet/puppetserver
+
 Step 2: Copy Code into Container
 docker cp puppet-assignment/ puppet-server:/etc/puppetlabs/code/environments/production/
+
 Step 3: Run Puppet Agent (Windows)
 
 Open PowerShell as Administrator:
-
 puppet agent -t
+
 Step 4: Accept Certificate (on Puppet Server)
 puppetserver ca sign --all
+
+
 📦 Required Puppet Modules
 
 Install on Puppet Master:
